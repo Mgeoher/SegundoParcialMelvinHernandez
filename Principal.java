@@ -22,20 +22,24 @@ public class Principal {
       System.out.println("Digite el tasa de Interes de la tarjeta");
       String tsaI = sc.nextLine();
       
+          
+      
        System .out.println("Que tipo de Tarjeta es");
-       System.out.println("1-Credito  2-Debito");
+       System.out.println("1-Credito  2-Debito 3-Salir");
        int op = sc.nextInt();
        
        switch (op)
        {
            case 1:
-               System.out.println("Bienvenido a Tarjeta de Credito");
+               System.out.print("Bienvenido a Tarjeta de Credito");
                System.out.println(tC.n(nombre));
-      System.out.println(tC.nu(numero));
-      System.out.println(tC.tasa(tsaI));
+               System.out.print("Su numero de tarjeta es ");
+               System.out.println(tC.nu(numero));
+               System.out.print("La tasa de credito es ");
+               System.out.println(tC.tasa(tsaI) + "%");
       
        System.out.println("que desea realizar");
-       System.out.println("1-Comprar  2- pagar  3-consultar saldo");
+       System.out.println("1-Comprar  2- pagar  3-consultar saldo 4 salir");
        int opcion = sc.nextInt(); 
        
        switch (opcion) 
@@ -58,17 +62,18 @@ public class Principal {
            case 3:
                System.out.print("su saldo acuatual es: ");
                     System.out.println(tC.getlimiteCredito());
-               break;       
+               break; 
+           case 4:
+               System.out.println("Vuelva pronto");
        }
        break;
        
            case 2:
                   TarjetaDebito tD = new TarjetaDebito ();
-       System.out.println("Bienvenido a Tarjeta de Debito");
+       System.out.print("Bienvenido a Tarjeta de Debito ");
        System.out.println(tD.n(nombre));
-      System.out.println(tD.nu(numero));
-      System.out.println(tD.tasa(tsaI));
-       
+       System.out.print("El numero de tarjeta es ");
+      System.out.println(tD.nu(numero)); 
         System.out.println("que desea realizar");
        System.out.println("1-Comprar  2- pagar  3-consultar saldo");
        int opcion1 = sc.nextInt(); 
@@ -96,8 +101,14 @@ public class Principal {
                System.out.print("su saldo acuatual es: ");
                     System.out.println(tD.getlimiteDebito());
                     
+           case 4:
+               System.out.println("Vuelva pronto");
+                    
                break;
-       } break;        
+       } break;   
+       
+           case 3 : 
+               System.out.println("Vuelva pronto");
        }
     
        }
