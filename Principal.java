@@ -22,10 +22,15 @@ public class Principal {
       System.out.println("Digite el tasa de Interes de la tarjeta");
       String tsaI = sc.nextLine();
       
+       System .out.println("Que tipo de Tarjeta es");
+       System.out.println("1-Credito  2-Debito");
+       int op = sc.nextInt();
        
-      
-      
-     System.out.println(tC.n(nombre));
+       switch (op)
+       {
+           case 1:
+               System.out.println("Bienvenido a Tarjeta de Credito");
+               System.out.println(tC.n(nombre));
       System.out.println(tC.nu(numero));
       System.out.println(tC.tasa(tsaI));
       
@@ -40,8 +45,6 @@ public class Principal {
                int monto = sc.nextInt();
                 System.out.print("el total de su saldo es ");
                System.out.println(tC.comprar(monto));
-              
-               
                break;
            case 2:
                
@@ -55,12 +58,13 @@ public class Principal {
            case 3:
                System.out.print("su saldo acuatual es: ");
                     System.out.println(tC.getlimiteCredito());
-               break; 
-               
-               
+               break;       
        }
-       TarjetaDebito tD = new TarjetaDebito ();
+       break;
        
+           case 2:
+                  TarjetaDebito tD = new TarjetaDebito ();
+       System.out.println("Bienvenido a Tarjeta de Debito");
        System.out.println(tD.n(nombre));
       System.out.println(tD.nu(numero));
       System.out.println(tD.tasa(tsaI));
@@ -93,6 +97,8 @@ public class Principal {
                     System.out.println(tD.getlimiteDebito());
                     
                break;
-       }  
+       } break;        
+       }
+    
        }
     }
